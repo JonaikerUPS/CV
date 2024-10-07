@@ -170,7 +170,7 @@ b .info {
 	margin-bottom: 50px;
 }
 .Eventos .title2 {
-	color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	margin-bottom: 10px;
@@ -199,7 +199,7 @@ b .info {
 	padding-top: 40px;
 }
 .title2 {
-	color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
 	text-transform: capitalize;
 	font-weight: 600;
 	letter-spacing: 2px;
@@ -305,12 +305,12 @@ b .info {
 	font-size: 1.2rem;
 }
 .aficiones ul li .fa {
-	color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
 	font-size: 18px;
 	width: 20px;
 }
 .cursos .title2 {
-	color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
 	text-transform: capitalize;
 	letter-spacing: 1px;
 	margin-bottom: 10px;
