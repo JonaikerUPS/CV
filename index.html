@@ -18,10 +18,20 @@
       src="https://kit.fontawesome.com/2c36e9b7b1.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Solo una versión de html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   </head>
 
   <body>
-    <div class="contenedor">
+     <button onclick="imprimirComoPDF()" class="download-btn">
+        <ion-icon name="print-outline"></ion-icon> Guardar como PDF
+    </button>
+   <!-- <button onclick="window.print()" class="download-btn" style="background: #2c3e50; color: white; border: none; padding: 12px 20px; border-radius: 5px; cursor: pointer; margin-bottom: 20px; font-size: 16px;">
+        <ion-icon name="print-outline"></ion-icon> Imprimir PDF
+    </button> -->
+
+    <!-- Contenedor principal con ID para PDF -->
+    <div id="cv-content" class="contenedor">
       <div class="izquierdo">
         <div class="perfil">
           <div class="img">
@@ -48,21 +58,19 @@
             >
               <ion-icon name="logo-facebook" style="color: #ffffff"></ion-icon>
             </a>
-              <a class="" href="https://x.com/jonaikerjaspe/" target="_blank">
-                <svg
-                  class="twitter-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z"
-                  />
-                </svg>
-              </a>
+            <a class="" href="https://x.com/jonaikerjaspe/" target="_blank">
+              <svg
+                class="twitter-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z"
+                />
+              </svg>
             </a>
-
             <a
-              class="as "
+              class="as"
               href="https://pinterest.com/jonaikerjaspe/"
               target="_blank"
             >
@@ -185,7 +193,7 @@
           </h2>
           <ul>
             <li>
-              <h4>“PROYECTO SINCO-MAPS”</h4>
+              <h4>"PROYECTO SINCO-MAPS"</h4>
               <p>
                 Durante mi pasantía en Alcaravan Sistemas Tecnológicos, tuve la
                 oportunidad de trabajar en el proyecto SINCO-MAPS, donde me
@@ -285,22 +293,56 @@
           </h2>
           <ul>
             <li>
-              <h4>“Certifica Software Libre”</h4>
+              <h4>"Certifica Software Libre"</h4>
               <!-- <h3>En Caracas</h3> -->
             </li>
             <br />
             <li>
-              <h4>“Fotografía”</h4>
+              <h4>"Fotografía"</h4>
               <!-- <h3>En Caracas</h3> -->
             </li>
             <br />
             <li>
-              <h4>“StartUP Method (Book One "Level I")”</h4>
+              <h4>"StartUP Method (Book One "Level I")"</h4>
               <!-- <h3>Houston Language College (3 Años)</h3> -->
             </li>
           </ul>
         </div>
       </div>
     </div>
+
+<script>
+function imprimirComoPDF() {
+    console.log('🖨️ Abriendo diálogo de impresión...');
+    
+    // Cambiar temporalmente el texto del botón
+    const boton = document.querySelector('.download-btn');
+    const textoOriginal = boton.innerHTML;
+    boton.innerHTML = '<ion-icon name="hourglass-outline"></ion-icon> Preparando PDF...';
+    boton.disabled = true;
+    
+    // Pequeño delay para que se vea el cambio
+    setTimeout(() => {
+        // Abrir diálogo de impresión
+        window.print();
+        
+        // Restaurar botón después de un momento
+        setTimeout(() => {
+            boton.innerHTML = textoOriginal;
+            boton.disabled = false;
+        }, 2000);
+        
+    }, 500);
+}
+
+// También podemos agregar un atajo de teclado (opcional)
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.key === 'p') {
+        e.preventDefault();
+        imprimirComoPDF();
+    }
+});
+</script>
+
   </body>
 </html>
