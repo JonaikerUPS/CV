@@ -195,6 +195,18 @@ b .info {
 	font-size: 1.8rem;
 }
 
+/* tamaño fijo en píxeles para los SVG dentro de los enlaces con clase .as */
+.as svg {
+    width: 24px;    /* ancho en px — cambia a 16/32/48 según prefieras */
+    height: 24px;   /* alto en px — mantener la misma proporción que viewBox */
+    vertical-align: middle; /* evita desfase vertical con texto */
+    display: inline-block;
+}
+.twitter-icon {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
 .Redes {
 	padding-top: 40px;
 }
